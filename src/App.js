@@ -1,12 +1,16 @@
-import{ React } from "react"
-import './Style.css'
-import Calendar from "./class-components"
-import { Header,Content,Footer } from "./func-components"
+import React  from "react"
+import { userContext } from "./context"
+import Header2  from "./context-header2"
+//import { context2 } from "./context-header2"
 
 export default function App(){
- 
+  let [user,setUser]=React.useState('')
+
   return(
-    [<Header/>,<Content/>,<Footer/>]
+    <userContext.Provider value={[user,setUser]}>
+    <Header2/>
+  
+    </userContext.Provider>
   )
 }
 
